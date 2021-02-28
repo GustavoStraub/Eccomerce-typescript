@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.css'
 
 
 export default function Home() {
-  const { products } = useContext(CartContext)
+  const { products, HandleCartOpen } = useContext(CartContext)
   console.log(products)
   return (
     <div>
@@ -18,7 +18,11 @@ export default function Home() {
       <Cart />
       <div className={styles.Header}>
         <h2 className={styles.PageTitle}>Produtos</h2>
-        <h2 className={styles.PageTitle}>Carrinho</h2>
+        <h2
+          onClick={HandleCartOpen}
+          className={styles.PageTitle}>
+          Carrinho
+          </h2>
       </div>
       <hr />
       <div className={styles.List}>

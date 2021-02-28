@@ -12,12 +12,12 @@ interface ProductProps {
 export default function Cart() {
 
   const [cartList, setCartList] = useState<ProductProps[]>([])
-  const [isCartOpened, setIsCartOpened] = useState(true)
-  const { Cart } = useContext(CartContext)
+  const { Cart, HandleCartOpen, isCartOpened } = useContext(CartContext)
+
 
   return (
     <div style={{ right: isCartOpened ? '0%' : '-30%' }} className={styles.Wrapper}>
-      <h1 onClick={() => setIsCartOpened(false)}>X</h1>
+      <h1 style={{ cursor: 'pointer' }} onClick={HandleCartOpen}>X</h1>
       <div className={styles.CartItems}>
         {Cart.map(Item => (
           <p>{Item.name}</p>

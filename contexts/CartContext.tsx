@@ -2,7 +2,9 @@ import { createContext, ReactNode, useState } from "react";
 
 interface CartProps {
   products: Products[],
-  Cart: Products[]
+  Cart: Products[],
+  HandleCartOpen: () => void;
+  isCartOpened: boolean
 }
 
 interface CartProvider {
@@ -48,11 +50,19 @@ export function CartProvider({ children }: CartProvider) {
     },
   ])
 
+  const [isCartOpened, setIsCartOpened] = useState(false)
+
+  function HandleCartOpen() {
+    setIsCartOpened(!isCartOpened)
+  }
+
   return (
     <CartContext.Provider
       value={{
         products,
-        Cart
+        Cart,
+        HandleCartOpen,
+        isCartOpened
       }}>
       {children}
     </CartContext.Provider>

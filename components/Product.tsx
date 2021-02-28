@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext'
 import styles from '../styles/components/Product.module.css'
 
 interface ProductProps {
@@ -12,6 +14,8 @@ export default function Product(props: ProductProps) {
   function addProductToKart(id: number) {
     alert(id)
   }
+
+
 
   return (
     <div onClick={() => addProductToKart(props.id)} 
