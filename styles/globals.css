@@ -1,0 +1,41 @@
+:root {
+  --main: rgb(32, 32, 32);
+  --text: #fff
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background: var(--main);
+  color: var(--text);
+  font-family: 'Josefin Sans', sans-serif;
+}
+hr{
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media(max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media(max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}

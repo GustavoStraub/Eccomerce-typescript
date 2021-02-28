@@ -1,0 +1,19 @@
+.List {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.PageTitle {
+  font-weight: 600;
+}
+
+.Header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+  align-items: center;
+}

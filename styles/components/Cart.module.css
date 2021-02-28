@@ -1,0 +1,25 @@
+.Wrapper{
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  height: 100vh;
+  width: 30%;
+  transition: all 0.5s;
+  z-index: 10;
+}
+
+.Wrapper h1 {
+  text-align: right;
+  color: #000;
+  padding: 0 10px;
+}
+
+.CartItems{
+  width: 80%;
+  margin: 0 auto;
+  background-color: #000;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
