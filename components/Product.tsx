@@ -3,23 +3,21 @@ import { CartContext } from '../contexts/CartContext'
 import styles from '../styles/components/Product.module.css'
 
 interface ProductProps {
-  id: number
   name: string,
   price: number,
-  imageUrl: string
+  imageUrl: string,
+  product: object
 }
 
 export default function Product(props: ProductProps) {
 
-  function addProductToKart(id: number) {
-    alert(id)
-  }
+  const { addProductToCart } = useContext(CartContext)
 
 
 
   return (
-    <div onClick={() => addProductToKart(props.id)} 
-    className={styles.Product}>
+    <div onClick={() => addProductToCart(props.product)}
+      className={styles.Product}>
       <h3>{props.name}</h3>
       <img src={props.imageUrl} alt={props.name} />
       <p>R${props.price.toFixed(2)}</p>

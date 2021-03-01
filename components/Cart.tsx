@@ -16,11 +16,11 @@ export default function Cart() {
 
 
   return (
-    <div style={{ right: isCartOpened ? '0%' : '-30%' }} className={styles.Wrapper}>
+    <div style={{ right: isCartOpened ? '0%' : '-80%' }} className={styles.Wrapper}>
       <h1 style={{ cursor: 'pointer' }} onClick={HandleCartOpen}>X</h1>
       <div className={styles.CartItems}>
         {Cart.map(Item => (
-          <p>{Item.name}</p>
+          <p key={Item.id}>{Item.name}</p>
         ))}
       </div>
     </div>

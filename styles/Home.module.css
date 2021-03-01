@@ -9,11 +9,18 @@
 
 .PageTitle {
   font-weight: 600;
+  font-size: 3rem;
 }
 
-.Header{
+.Header {
   display: flex;
   justify-content: space-between;
   padding: 0 5rem;
   align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .Header {
+    padding: 0 2rem;
+  }
 }

@@ -4,7 +4,9 @@ interface CartProps {
   products: Products[],
   Cart: Products[],
   HandleCartOpen: () => void;
-  isCartOpened: boolean
+  addProductToCart: Function;
+  isCartOpened: boolean;
+  ItemAdded: boolean
 }
 
 interface CartProvider {
@@ -51,9 +53,18 @@ export function CartProvider({ children }: CartProvider) {
   ])
 
   const [isCartOpened, setIsCartOpened] = useState(false)
+  const [ItemAdded, setItemAdded] = useState(false)
 
   function HandleCartOpen() {
     setIsCartOpened(!isCartOpened)
+  }
+
+  function addProductToCart(product: Products) {
+    setCart([...Cart, product])
+    setItemAdded(true)
+    setTimeout(() => {
+      setItemAdded(false)
+    }, 1500);
   }
 
   return (
@@ -62,7 +73,9 @@ export function CartProvider({ children }: CartProvider) {
         products,
         Cart,
         HandleCartOpen,
-        isCartOpened
+        isCartOpened,
+        addProductToCart,
+        ItemAdded
       }}>
       {children}
     </CartContext.Provider>

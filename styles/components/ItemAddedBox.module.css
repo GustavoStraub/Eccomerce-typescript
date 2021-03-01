@@ -1,0 +1,11 @@
+.container {
+  position: fixed;
+  bottom: 30px;
+  width: 200px;
+  left: calc(50% - 100px);
+  background: #fff;
+  border-radius: 5px;
+  color: #000;
+  text-align: center;
+  transition: all 0.5s;
+}
